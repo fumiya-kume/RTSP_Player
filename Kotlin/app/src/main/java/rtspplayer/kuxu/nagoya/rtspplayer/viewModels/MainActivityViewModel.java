@@ -1,17 +1,16 @@
 package rtspplayer.kuxu.nagoya.rtspplayer.viewModels;
 
+import android.databinding.BaseObservable;
+import android.databinding.ObservableField;
+
 /**
  * Created by gurag on 2017/08/08.
  */
 
-public class MainActivityViewModel {
-    private final String Greeting;
+public class MainActivityViewModel extends BaseObservable {
+    public ObservableField<String> RTSPURL = new ObservableField<>();
 
-    public MainActivityViewModel(String greeting) {
-        Greeting = greeting;
-    }
-
-    public String getGreeting() {
-        return Greeting;
+    public boolean ValidURL(){
+        return RTSPURL.get() != "";
     }
 }
